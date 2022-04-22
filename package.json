@@ -1,0 +1,32 @@
+{
+  "name": "instock",
+  "version": "1.0.0",
+  "description": "warehouse inventory management",
+  "main": "index.js",
+  "dependencies": {
+    "all": "^0.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "client-install": "npm install --prefix ./client",
+    "server-install": "npm install --prefix ./server",
+    "install-all": "npm install && npm run client-install && npm run server-install",
+    "dev": "npm-run-all -p dev-server dev-client",
+    "dev-client": "npm start --prefix client",
+    "dev-server": "npm run watch --prefix server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsnelling9/instock.git"
+  },
+  "author": "Brodie Snelling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bsnelling9/instock/issues"
+  },
+  "homepage": "https://github.com/bsnelling9/instock#readme"
+}
