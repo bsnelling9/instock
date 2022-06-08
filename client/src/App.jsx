@@ -10,7 +10,7 @@ import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 import EditWarehouse from './components/EditWarehouse/EditWarehouse';
 import EditInventory from './components/EditInventory/EditInventory'
 import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
-
+import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventoryItem";
 class App extends Component {
   render() {
     return (
@@ -50,6 +50,13 @@ class App extends Component {
                 exact
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
+              />
+              <Route
+                path="/inventory/add"
+                exact
+                render={(routerProps) => (
+                  <AddNewInventoryItem {...routerProps} />
+                )}
               />
               <Route
                 path="/inventory/:id"

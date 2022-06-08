@@ -57,7 +57,7 @@ class InventoryList extends Component {
                             <h1 className='inventory__title'>Inventory</h1>
                             <div className='inventory__actions'>
                                 <input className='inventory__actions-search' type='text' name='search' placeholder='Search...' />
-                                <Link to=''>
+                                <Link to='/inventory/add'>
                                     <button className='inventory__actions-btn'>+ Add New Item</button>
                                 </Link>
                             </div>
