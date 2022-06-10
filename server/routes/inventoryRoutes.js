@@ -44,9 +44,38 @@ router.delete('/:id/delete', (req, res) => {
       return
     }
     res.send("deleted")})
-
   })
 })
+
+// POST request to add new inventory item
+router.post("/add", (req, res) => {
+  fs.readFile("./data/inventories.json", "utf8", (err, data) => {
+    if (err) {
+      res.send("error reading data");
+    } else {
+      const allInventories = JSON.parse(data);
+      const newInventoryItem = {
+        id: uuidv4(),
+        ...req.body,
+      };
+      allInventories.unshift(newInventoryItem);
+      fs.writeFile(
+        "./data/inventories.json",
+        JSON.stringify(allInventories),
+        (err) => {
+          if (err) {
+            res.send("error writing data");
+          } else {
+            res.send({
+              message: "data written to file",
+              data: newInventoryItem,
+            });
+          }
+        }
+      );
+    }
+  });
+});
 // PATCH edit inventory item
 router.patch('/:id/edit', (req, res) =>{
   fs.readFile("./data/inventories.json", "utf8", (err, data) => {

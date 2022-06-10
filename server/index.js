@@ -7,7 +7,7 @@ const warehouseRoutes = require('./routes/warehouseRoutes');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT;
-
+app.set('trust proxy',true); 
 // middleware
 app.use(express.json());
 app.use(express.static('public'));
