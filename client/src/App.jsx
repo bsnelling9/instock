@@ -55,8 +55,7 @@ class App extends Component {
                 path="/inventory/add"
                 exact
                 render={(routerProps) => (
-                  <AddNewInventoryItem {...routerProps} />
-                )}
+                  <AddNewInventoryItem {...routerProps} />)}
               />
               <Route
                 path="/inventory/:id"
