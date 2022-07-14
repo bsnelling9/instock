@@ -6,9 +6,6 @@ const { v4: uuidv4 } = require('uuid');
 
 // GET list of all warehouses
 router.get("/", (req, res) => {
-    const ip = req.ip
-    console.log(ip)
-    
   fs.readFile('./data/warehouses.json', 'utf8', (err, data) => {
     if (err) {
       res.send('error getting data');
